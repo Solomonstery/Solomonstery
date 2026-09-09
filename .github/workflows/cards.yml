@@ -26,7 +26,7 @@ jobs:
         uses: DenverCoder1/github-readme-streak-stats@main
         continue-on-error: true
         with:
-          options: user=${{ github.repository_owner }}&theme=elegant&hide_border=true&border_radius=12&locale=zh&disable_animations=true
+          options: user=${{ github.repository_owner }}&theme=elegant&hide_border=true&border_radius=12&locale=zh
           path: dist/streak.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
