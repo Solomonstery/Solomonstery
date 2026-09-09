@@ -1,6 +1,6 @@
 <div align="center">
 
-# 上帝已死
+# 爱意随风起
 
 <p>
   <a href="https://t.me/Solomonstery">
@@ -51,6 +51,6 @@
 
 ---
 
-<i>上帝已死。</i>
+<i>风止意难平</i>
 
 </div>
