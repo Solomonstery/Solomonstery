@@ -19,7 +19,11 @@
 ## 🔥 连续贡献
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Solomonstery/Solomonstery/output/streak.svg" width="72%" alt="连续贡献" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Solomonstery/Solomonstery/output/streak-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Solomonstery/Solomonstery/output/streak.svg" />
+    <img src="https://raw.githubusercontent.com/Solomonstery/Solomonstery/output/streak.svg" width="72%" alt="连续贡献" />
+  </picture>
 </div>
 
 <br/>

@@ -21,13 +21,21 @@ jobs:
         run: mkdir -p dist
 
       # 在 runner 内部直接生成 streak SVG，不依赖 demolab 公共服务器
-      # 失败时不阻断蛇的生成，旧 streak.svg 由 keep_files 保留
-      - name: Generate streak stats
+      # 亮/暗双主题，失败时不阻断蛇的生成，旧 SVG 由 keep_files 保留
+      - name: Generate streak stats (light - yeblu)
         uses: DenverCoder1/github-readme-streak-stats@main
         continue-on-error: true
         with:
-          options: user=${{ github.repository_owner }}&theme=elegant&hide_border=true&border_radius=12&locale=zh
+          options: user=${{ github.repository_owner }}&theme=yeblu&hide_border=true&border_radius=12&locale=zh
           path: dist/streak.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate streak stats (dark - maroongold)
+        uses: DenverCoder1/github-readme-streak-stats@main
+        continue-on-error: true
+        with:
+          options: user=${{ github.repository_owner }}&theme=maroongold&hide_border=true&border_radius=12&locale=zh
+          path: dist/streak-dark.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate contribution snake
