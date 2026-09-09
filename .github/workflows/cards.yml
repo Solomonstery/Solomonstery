@@ -1,4 +1,4 @@
-name: Generate Contribution Snake
+name: Generate README Cards
 
 on:
   schedule:
@@ -17,6 +17,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Prepare dist directory
+        run: mkdir -p dist
+
+      # 在 runner 内部直接生成 streak SVG，不依赖 demolab 公共服务器
+      # 失败时不阻断蛇的生成，旧 streak.svg 由 keep_files 保留
+      - name: Generate streak stats
+        uses: DenverCoder1/github-readme-streak-stats@main
+        continue-on-error: true
+        with:
+          options: user=${{ github.repository_owner }}&theme=elegant&hide_border=true&border_radius=12&locale=zh&disable_animations=true
+          path: dist/streak.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Generate contribution snake
         uses: Platane/snk@v3
         with:
@@ -25,10 +38,11 @@ jobs:
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
 
-      - name: Push snake to output branch
+      - name: Push cards to output branch
         uses: crazy-max/ghaction-github-pages@v4
         with:
           target_branch: output
           build_dir: dist
+          keep_files: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

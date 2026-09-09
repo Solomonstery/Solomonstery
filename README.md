@@ -17,7 +17,7 @@
 ## 连续贡献
 
 <div align="center">
-  <img src="https://streak-stats.demolab.com/?user=Solomonstery&locale=zh&theme=elegant&hide_border=true&border_radius=12" width="80%" alt="连续贡献" />
+  <img src="https://raw.githubusercontent.com/Solomonstery/Solomonstery/output/streak.svg" width="80%" alt="连续贡献" />
 </div>
 
 ## 贡献轨迹
